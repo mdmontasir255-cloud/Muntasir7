@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: bold;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.name {
+    font-size: 2.2em;
+    color: #764ba2;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.emoji-row {
+    font-size: 2em;
+    margin: 20px 0;
+    letter-spacing: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.message-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9ff;
+    border-left: 5px solid #667eea;
+    border-radius: 10px;
+}
+
+.greeting {
+    font-size: 1.3em;
+    color: #764ba2;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.message-text {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.wishes-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #fff5f7;
+    border-radius: 10px;
+}
+
+.wishes-title {
+    font-size: 1.5em;
+    color: #764ba2;
+    margin-bottom: 20px;
+}
+
+.wishes-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.wish-item {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1em;
+    box-shadow: 0 2px 8px rgba(118, 75, 162, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideInRight 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.wish-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.2);
+}
+
+.wish-item:nth-child(1) { animation-delay: 0.1s; }
+.wish-item:nth-child(2) { animation-delay: 0.2s; }
+.wish-item:nth-child(3) { animation-delay: 0.3s; }
+.wish-item:nth-child(4) { animation-delay: 0.4s; }
+.wish-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Cake Animation */
+.cake-section {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px;
+}
+
+.cake {
+    position: relative;
+    width: 100px;
+    height: 120px;
+}
+
+.cake-layer {
+    width: 100px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #ffa500 100%);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.2);
+    animation: cakeBounce 2s ease-in-out infinite;
+}
+
+@keyframes cakeBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.candle {
+    position: absolute;
+    width: 3px;
+    height: 40px;
+    background: #8b7500;
+    left: 48.5px;
+    top: -35px;
+    border-radius: 2px;
+}
+
+.flame {
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    background: #ff6b00;
+    border-radius: 50% 50% 50% 0;
+    left: -1.5px;
+    top: -12px;
+    transform-origin: center;
+    animation: flameFlicker 0.3s ease-in-out infinite;
+    box-shadow: 0 0 10px #ff6b00;
+}
+
+@keyframes flameFlicker {
+    0%, 100% {
+        transform: scaleY(1) rotate(0deg);
+    }
+    25% {
+        transform: scaleY(1.2) rotate(5deg);
+    }
+    50% {
+        transform: scaleY(1) rotate(-5deg);
+    }
+    75% {
+        transform: scaleY(1.1) rotate(3deg);
+    }
+}
+
+.footer-message {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px dashed #667eea;
+}
+
+.footer-message p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 1.3em;
+    color: #764ba2;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Confetti Styles */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .name {
+        font-size: 1.8em;
+    }
+
+    .emoji-row {
+        font-size: 1.5em;
+        letter-spacing: 8px;
+    }
+
+    .message-text {
+        font-size: 0.95em;
+        text-align: left;
+    }
+
+    .wishes-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cake {
+        width: 80px;
+        height: 100px;
+    }
+
+    .cake-layer {
+        width: 80px;
+        height: 70px;
+    }
+
+    .candle {
+        left: 38.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    .name {
+        font-size: 1.4em;
+    }
+
+    .emoji-row {
+        font-size: 1.2em;
+        letter-spacing: 5px;
+    }
+
+    .greeting {
+        font-size: 1.1em;
+    }
+
+    .message-text {
+        font-size: 0.9em;
+    }
+
+    .wishes-title {
+        font-size: 1.2em;
+    }
+
+    .wish-item {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+}
